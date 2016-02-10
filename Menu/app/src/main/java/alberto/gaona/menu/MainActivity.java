@@ -104,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 main_view.setBackgroundColor(Color.YELLOW);
                 return true;
+            case R.id.dragdrop2:
+                Intent drag2 = new Intent(MainActivity.this, DragDripClass2.class);
+                startActivity(drag2);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

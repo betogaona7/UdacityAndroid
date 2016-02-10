@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DragDropClass"/>
+        <activity android:name=".DragDripClass2"/>
     </application>
 
 </manifest>

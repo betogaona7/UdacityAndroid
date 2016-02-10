@@ -20,4 +20,11 @@
             app:showAsAction="never"
             android:title="@string/yellow_string"/>
     </group>
+    <item
+        android:id="@+id/dragdrop2"
+        android:orderInCategory="4"
+        app:showAsAction="never"
+        android:title="@string/dragdrop2">
+
+    </item>
 </menu>
