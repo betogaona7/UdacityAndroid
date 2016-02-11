@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
 
 public class Tab3 extends Fragment{
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -21,7 +24,18 @@ public class Tab3 extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.tab3, container, false);
+        View view = inflater.inflate(R.layout.grid_layout, container, false);
+
+        GridView gridView = (GridView)view.findViewById(R.id.gridview);
+        gridView.setAdapter(new ImageAdapter(getContext()));
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(), "" + position, Toast.LENGTH_LONG).show();
+            }
+        });
+
         return view;
 
     }
