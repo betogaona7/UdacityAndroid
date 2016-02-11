@@ -9,6 +9,7 @@
     <string name="title_section2">List View</string>
     <string name="title_section3">Grid View</string>
 
+    <string name="contentDescription1">Content Description</string>
     <string-array name="sports_array">
         <item>Shuttle Badminton</item>
         <item>Tennis</item>

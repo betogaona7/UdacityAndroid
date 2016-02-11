@@ -26,16 +26,20 @@ public class Tab3 extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.grid_layout, container, false);
 
-        GridView gridView = (GridView)view.findViewById(R.id.gridview);
+        final GridView gridView = (GridView)view.findViewById(R.id.gridview);
         gridView.setAdapter(new ImageAdapter(getContext()));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(), "" + position, Toast.LENGTH_LONG).show();
+
+
             }
         });
 
+        String contentDescription = "Select position:  ";
+        gridView.setContentDescription(contentDescription);
         return view;
 
     }
