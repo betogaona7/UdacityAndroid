@@ -2,6 +2,7 @@ package alberto.gaona.navigation;
 
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -16,21 +17,43 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    MediaPlayer playback;
+
     private static String VALUE = "myValue";
 
     public void startNewActivity(View view){
-        Intent intent = new Intent(this, SecondActivity.class);
+        /*Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra(VALUE, "My custom value");
-        startActivity(intent);
+        startActivity(intent);*/
+
+        //Implicit intent
+        Intent newIntent = new Intent(Intent.ACTION_SEND);
+        newIntent.setType("text/plain");
+        String stringToShare = "Hi, this is a implicit intent";
+        newIntent.putExtra(Intent.EXTRA_TEXT, stringToShare);
+        startActivity(Intent.createChooser(newIntent, "Share via"));
+    }
+
+
+    public void startPlay(View view){
+        playback.start();
     }
 
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        playback.release();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        playback = MediaPlayer.create(this, R.raw.playback);
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
