@@ -6,8 +6,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class Tab2 extends Fragment{
+public class Tab2 extends Fragment implements AdapterView.OnItemClickListener{
+
+    private ListView listView;
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     public static Tab2 newInstance(int sectionNumber){
@@ -22,6 +28,15 @@ public class Tab2 extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab2,container,false);
+
+        listView = (ListView) view.findViewById(R.id.sportsList);
+        listView.setOnItemClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+        Toast.makeText(getContext(), ((TextView)view).getText(), Toast.LENGTH_LONG).show();
     }
 }
