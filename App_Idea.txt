@@ -1,0 +1,1 @@
+People would like to know the dogs, know that breeds exist, and see pictures of them. So this simple application is to display information about each dog breed.

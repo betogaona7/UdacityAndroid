@@ -1,0 +1,11 @@
+1- How do I show suggestions when typing into an EditText
+2- How do I add a Popup Menu
+3- How do I add tabs to my app
+4- How do I crete an Options Menu
+5- How do I use onLongClick
+6- How do I use the ListView
+7- How do I use the GridView 
+8- How do I use share button
+9- How do I make my application more accesible
+10- How do I work with multiple screens (activities)
+
